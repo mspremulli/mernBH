@@ -7,6 +7,9 @@ const config = require('./config');
 app.use(express.json());
 app.use(express.cors());
 
+const users = require('./routes/api/users');
+app.use('/api/users', users)
+
 
 mongoose
 .connect(config.mongoURI, { newUrlParser: true})
